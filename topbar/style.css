@@ -3,25 +3,32 @@
     position: relative;
     width: 100%;
     height: 70px;
-}
-
-.plus-icon {
+  }
+  
+  .plus-icon {
     position: absolute;
     width: 216px;
     height: 70px;
     top: 0;
     left: 0;
-}
-
-.GE-plus-university {
-    position: absolute;
-    top: 16px;
-    left: 87px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  }
+  .GE-plus-university {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin: 0;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0;
-    line-height: normal;
-}
+  }
+  .GE-plus-university img {
+    height: 80%;
+    vertical-align: middle;
+    margin: 5px;
+  }
+  .GE-plus-university a {
+    margin: 0;
+  }
+  
