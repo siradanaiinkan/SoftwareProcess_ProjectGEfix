@@ -1,49 +1,132 @@
-let homeElement = document.querySelector('.home');
-let assignmentElement = document.querySelector('.assignment');
-let personalElement = document.querySelector('.personal');
-let assessmentElement = document.querySelector('.assessment');
-//เปลียนสีของ topbarElement อื่นๆนอกจากที่เลือก
-function setColor(otherElement) {
-    otherElement.forEach(element => {
-        element.style.color = "#ffffff";
-        element.style.borderColor = "#ebebeb00";
-    });
+.topbar {
+  background-color: #A32FFF;
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  box-shadow: 0px 1px 3px #0000008c;
 }
-// topbar Menu
-function home() {
-    //เปลียนสี topbar
-    homeElement.style.color = "#FFE881";
-    homeElement.style.borderColor = "#FFE881";
-    let otherElement = [assignmentElement, personalElement, assessmentElement];
-    setColor(otherElement);
-    //
+
+.left-items {
+  height: 50px;
+  display: flex;
+  flex-grow: 1; 
 }
-function assignment() {
-    //เปลียนสี topbar
-    assignmentElement.style.color = "#FFE881";
-    assignmentElement.style.borderColor = "#FFE881";
-    let otherElement = [homeElement, personalElement, assessmentElement];
-    setColor(otherElement);
-    //
+.GEplus {
+  display: flex; 
+  align-items: center; 
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  margin: 0px 10px 0px 0px;
+  color: #ffffff;
 }
-function personal() {
-    //เปลียนสี topbar
-    personalElement.style.color = "#FFE881";
-    personalElement.style.borderColor = "#FFE881";
-    let otherElement = [homeElement, assignmentElement, assessmentElement];
-    setColor(otherElement);
-    //
+.GEplus img {
+  height: 70%;
+  margin: 5px 5px 5px 15px;
 }
-function assessment() {
-    //เปลียนสี topbar
-    assessmentElement.style.color = "#FFE881";
-    assessmentElement.style.borderColor = "#FFE881";
-    let otherElement = [homeElement, assignmentElement, personalElement];
-    setColor(otherElement);
-    //
+.GEplus span {
+  display: flex;
+  flex-direction: column;
 }
-// Drop-down Profile Menu
- function toggleMenu() {
-    let dropdownMenu = document.getElementById("menu");
-    dropdownMenu.classList.toggle("open-menu");
+.GEplus a2 {
+  font-size: 70%;
+}
+
+.bi {
+  font-size: 150%;
+  margin: 5px;
+}
+.home {
+  display: flex; 
+  align-items: center; 
+  font-size: 80%;
+  margin: 0px 10px 0px 0px;
+  color: #ffffff;
+  border-bottom: 3px solid #ebebeb00;
+  cursor: pointer;
+}
+.assignment {
+  display: flex; 
+  align-items: center; 
+  font-size: 80%;
+  margin: 0px 10px 0px 0px;
+  color: #ffffff;
+  border-bottom: 3px solid #ebebeb00;
+  cursor: pointer;
+}
+.personal {
+  display: flex; 
+  align-items: center; 
+  font-size: 80%;
+  margin: 0px 10px 0px 0px;
+  color: #ffffff;
+  border-bottom: 3px solid #ebebeb00;
+  cursor: pointer;
+}
+.assessment {
+  display: flex; 
+  align-items: center; 
+  font-size: 80%;
+  margin: 0px 10px 0px 0px;
+  color: #ffffff;
+  border-bottom: 3px solid #ebebeb00;
+  cursor: pointer;
+}
+
+.rigth-items {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.person {
+  display: flex;
+  margin: 5px 15px 5px 5px;
+  color: #ffffff; 
+}
+.dropdown-button {
+  background-color: #8E00FF;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7%;
+}
+.dropdown-wrap {
+  position: absolute;
+  top: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+.dropdown-wrap.open-menu{
+  max-height: 400px;
+}
+.dropdown-menu {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 80%;
+  padding: 0;
+  border: 1px solid #EBEBEB;
+  border-bottom-right-radius: 7%;
+  border-bottom-left-radius: 7%;
+}
+.dropdown-home {
+  display: flex; 
+  align-items: center; 
+  padding: 0px 10px 0px 10px;
+}
+.dropdown-license {
+  display: flex; 
+  align-items: center; 
+  padding: 0px 10px 0px 10px;
+  border-bottom: 1px solid #EBEBEB;
+  border-top: 1px solid #EBEBEB;
+}
+.dropdown-logout {
+  display: flex; 
+  align-items: center; 
+  padding: 0px 10px 0px 10px;
+  color: #ff0000;
 }
