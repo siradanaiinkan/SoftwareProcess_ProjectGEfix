@@ -9,10 +9,20 @@ function setColor(otherElement) {
         element.style.borderColor = "#ebebeb00";
     });
 }
+function loading() {
+  text = `
+    <div class="load">
+      <div id="loading">
+        <a>Loading...</a>
+        <div class="color"></div>
+      </div>
+    </div>
+  `;
+  document.getElementById('content').innerHTML = text;
+}
 // get html css js
 function getHtml(selectedElement, otherElements) {
-  // เเสดงหน้าโหลด
-  document.getElementById('loading').style.display = 'block';
+  loading();
   // เปลี่ยนสี topbar
   selectedElement.style.color = "#FFE881";
   selectedElement.style.borderColor = "#FFE881";
@@ -26,7 +36,6 @@ function getHtml(selectedElement, otherElements) {
         return res.text();
       })
       .then(function(html) {
-        document.getElementById('loading').style.display = 'none'; // ปิดหน้าโหลด
         document.getElementById('content').innerHTML = html; //เอาเนื้อหาใน data ไปแสดงใน content
         // Initialize the DOM parser
         const parser = new DOMParser();
