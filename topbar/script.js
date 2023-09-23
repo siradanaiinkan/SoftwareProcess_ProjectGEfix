@@ -19,28 +19,36 @@ function getHtml(selectedElement, otherElements) {
   // เปลี่ยนสี topbar boxอื่น
   setColor(otherElements);
   // get name 
-  const pageName = selectedElement.classList[0]; 
+  const pageName = selectedElement.classList[0];
   fetch(`${pageName}.html`)
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('loading').style.display = 'none'; // ปิดหน้าโหลด
-          document.getElementById('content').innerHTML = data; //เอาเนื้อหาใน data ไปแสดง
-          const parser = new DOMParser(); //ใช้แปลง HTML 
-          const doc = parser.parseFromString(data, 'text/html');//แปลง data ที่เป็น .html 
-          const head = document.querySelector('head'); //head ของtopbar.html
-          const scripts = doc.querySelectorAll('script'); //js จาก data
-          const stylesheets = doc.querySelectorAll('link[rel="stylesheet"]'); //css จาก data
-          scripts.forEach(script => { // เอาjs ใส่ใน head
-              const newScript = document.createElement('script');
-              newScript.src = script.getAttribute('src');
-              head.appendChild(newScript);
-          });
-          stylesheets.forEach(stylesheet => { // เอาcss ใส่ใน head
-              const newStylesheet = document.createElement('link');
-              newStylesheet.rel = 'stylesheet';
-              newStylesheet.href = stylesheet.getAttribute('href');
-              head.appendChild(newStylesheet);
-          });
+      .then(res => {
+        if (res.status != 200) { throw new Error("Bad Server Response"); }
+        return res.text();
+      })
+      .then(function(html) {
+        document.getElementById('loading').style.display = 'none'; // ปิดหน้าโหลด
+        document.getElementById('content').innerHTML = html; //เอาเนื้อหาใน data ไปแสดงใน content
+        // Initialize the DOM parser
+        const parser = new DOMParser();
+        // Parse the text
+        const doc = parser.parseFromString(html, "text/html");
+        const head = document.querySelector('head'); //head ของtopbar.html
+        const scripts = doc.querySelectorAll('script[type="text/javascript"'); //js จาก data
+        const stylesheets = doc.querySelectorAll('link[rel="stylesheet"]'); //css จาก data
+        scripts.forEach(script => { // เอาjs ใส่ใน head
+            const newScript = document.createElement('script');
+            newScript.src = script.getAttribute('src');
+            head.appendChild(newScript);
+        });
+        stylesheets.forEach(stylesheet => { // เอาcss ใส่ใน head
+            const newStylesheet = document.createElement('link');
+            newStylesheet.rel = 'stylesheet';
+            newStylesheet.href = stylesheet.getAttribute('href');
+            head.appendChild(newStylesheet);
+        });
+      })
+      .catch(function(err) {  
+        console.log('Failed to fetch page: ', err);  
       });
 }
 // topbar Menu
