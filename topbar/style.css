@@ -131,6 +131,45 @@
   color: #ff0000;
 }
 
+.load{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 #loading {
-  color: #ff0000;
+  width: 40%;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #D39AFF;
+  border: 5px solid #8E00FF;
+  border-radius: 25px;
+}
+#loading .color {
+  background-color: #FFE881;
+  height: 20px;
+  border-radius: 25px;
+  animation: load 4s infinite linear;
+}
+#loading a {
+  position: absolute;
+  margin-left: 17%;
+}
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
 }
