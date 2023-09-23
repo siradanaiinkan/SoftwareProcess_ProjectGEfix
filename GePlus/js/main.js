@@ -1,4 +1,4 @@
-let homeElement = document.querySelector('.home');
+let dashboardElement = document.querySelector('.dashboard');
 let assignmentElement = document.querySelector('.assignment');
 let personalElement = document.querySelector('.personal');
 let assessmentElement = document.querySelector('.assessment');
@@ -61,23 +61,23 @@ function getHtml(selectedElement, otherElements) {
       });
 }
 // topbar Menu
-function home() {
+function dashboard() {
   const otherElements = [assignmentElement, personalElement, assessmentElement];
-  getHtml(homeElement, otherElements);
+  getHtml(dashboardElement, otherElements);
 }
 
 function assignment() {
-  const otherElements = [homeElement, personalElement, assessmentElement];
+  const otherElements = [dashboardElement, personalElement, assessmentElement];
   getHtml(assignmentElement, otherElements);
 }
 
 function personal() {
-  const otherElements = [homeElement, assignmentElement, assessmentElement];
+  const otherElements = [dashboardElement, assignmentElement, assessmentElement];
   getHtml(personalElement, otherElements);
 }
 
 function assessment() {
-  const otherElements = [homeElement, assignmentElement, personalElement];
+  const otherElements = [dashboardElement, assignmentElement, personalElement];
   getHtml(assessmentElement, otherElements);
 }
 // Drop-down Profile Menu
