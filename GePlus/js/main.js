@@ -44,17 +44,25 @@ function getHtml(selectedElement, otherElements) {
         const head = document.querySelector('head'); //head ของtopbar.html
         const scripts = doc.querySelectorAll('script[type="text/javascript"'); //js จาก data
         const stylesheets = doc.querySelectorAll('link[rel="stylesheet"]'); //css จาก data
-        scripts.forEach(script => { // เอาjs ใส่ใน head
-            const newScript = document.createElement('script');
-            newScript.src = script.getAttribute('src');
-            head.appendChild(newScript);
+        function appendUniqueElement(container, newElement) {
+          const existingElement = container.querySelector(`[src="${newElement.src}"]`);
+          if (!existingElement) {
+              container.appendChild(newElement);
+          }
+        }
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          newScript.src = script.getAttribute('src');
+          appendUniqueElement(head, newScript); // เพิ่ม <script> ลงใน div#head ถ้าไม่มีอยู่แล้ว
         });
-        stylesheets.forEach(stylesheet => { // เอาcss ใส่ใน head
+        
+        stylesheets.forEach(stylesheet => {
             const newStylesheet = document.createElement('link');
             newStylesheet.rel = 'stylesheet';
             newStylesheet.href = stylesheet.getAttribute('href');
-            head.appendChild(newStylesheet);
+            appendUniqueElement(head, newStylesheet); // เพิ่ม <link> ลงใน div#head ถ้าไม่มีอยู่แล้ว
         });
+          console.log(document.querySelector('html')); 
       })
       .catch(function(err) {  
         console.log('Failed to fetch page: ', err);  
