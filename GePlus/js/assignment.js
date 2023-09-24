@@ -1,13 +1,34 @@
-function changetab(tabName) {
-    var i, tabcontent, button;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    button = document.getElementsByClassName("button");
-    for (i = 0; i < button.length; i++) {
-      button[i].classList.remove("active");
-    }
-    document.getElementById(tabName).style.display = "block";
+function getsearchtap(
+  selectElement,
+  selectContent,
+  otherElement,
+  otherContent
+) {
+  if (selectElement && otherElement) {
+    // content
+    otherContent.style.display = "none";
+    selectContent.style.display = "block";
+
+    // เปลี่ยนสี
+    otherElement.classList.remove("active");
+    selectElement.classList.add("active");
+    selectElement.classList.remove("hover");
+  }
 }
-changetab('search');
+function assignmentSearch() {
+  getsearchtap(
+    document.querySelector(".search"),
+    document.querySelector("#search"),
+    document.querySelector(".detailed"),
+    document.querySelector("#detailed")
+  );
+}
+function assignmentDetailed() {
+  getsearchtap(
+    document.querySelector(".detailed"),
+    document.querySelector("#detailed"),
+    document.querySelector(".search"),
+    document.querySelector("#search")
+  );
+}
+assignmentSearch();
