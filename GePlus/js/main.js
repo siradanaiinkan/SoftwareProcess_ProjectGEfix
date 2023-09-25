@@ -61,34 +61,40 @@ function getHtml(selectedElement, otherElements) {
       });
 }
 // topbar Menu
-function dashboard() {
+function dashboard() { //book
   const selectedElement = document.querySelector('.dashboard');
   const otherElement = [assignmentElement, personalElement, assessmentElement];
   setColor(selectedElement,otherElement)
   getHtml(dashboardElement, otherElement);
 }
 
-function assignment() {
+function assignment() { //aoom
   const selectedElement = document.querySelector('.assignment');
   const otherElement = [dashboardElement, personalElement, assessmentElement];
   setColor(selectedElement,otherElement)
   getHtml(assignmentElement, otherElement);
 }
-function assignmentWorksheetList() {
+function assignmentWorksheetList() { //worksheet_List mark
   const selectedElement = document.querySelector('.assignment');
   const otherElement = [dashboardElement, personalElement, assessmentElement];
   setColor(selectedElement,otherElement)
   getHtml(document.querySelector('.assignment-worksheetList'), otherElement);
 }
+function assignmentWorksheetTurn() { //worksheet_Turn arm
+  const selectedElement = document.querySelector('.assignment');
+  const otherElement = [dashboardElement, personalElement, assessmentElement];
+  setColor(selectedElement,otherElement)
+  getHtml(document.querySelector('.assignment-worksheetTurn'), otherElement);
+}
 
-function personal() {
+function personal() { //wave
   const selectedElement = document.querySelector('.personal');
   const otherElement = [dashboardElement, assignmentElement, assessmentElement];
   setColor(selectedElement,otherElement)
   getHtml(personalElement, otherElement);
 }
 
-function assessment() {
+function assessment() { //
   const selectedElement = document.querySelector('.assessment');
   const otherElement = [dashboardElement, assignmentElement, personalElement];
   setColor(selectedElement,otherElement)
