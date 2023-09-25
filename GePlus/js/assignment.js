@@ -33,4 +33,17 @@ function assignmentDetailed() {
 }
 assignmentSearch();
 
+function toggleCourse() {
+  let dassignmentCourse = document.querySelector(".assignment-course-wrap");
+  dassignmentCourse.classList.toggle("open");
+}
+function coursebotton() {
+  const coursebotton = document.querySelector('.course-botton');
+  if (coursebotton.style.transform !== 'rotate(180deg)') {
+    coursebotton.style.transform = 'rotate(180deg)';
+  } else {
+    coursebotton.style.transform = 'rotate(0deg)';
+  }
+  toggleCourse()
+}
 
