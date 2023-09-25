@@ -70,28 +70,28 @@
     word-wrap: break-word
 }
 .profile-right {
-    width: 1000px;
-    height: 500px;
-    margin: 10px;
-    border-radius: 20px;
-    background: #ec0808; 
-}
-.card-headertab {
-    width: 800px;
-    height: 450px;
+    width: auto;
+    height: 550px;
     flex-shrink: 0; 
     box-sizing: border-box;
-    border-radius: 0px 20px 20px 20px;
-    background: #D9D9D9; 
+    background: #D9D9D9;
+    border-radius: 10px 10px 10px 10px;
+}
+.card-headertab {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 0px;
+    background-color: #9E24FF;
 }
 .information ,.group {
-    background-color: #E6C6FF;
+    background-color: #D9D9D9;
     float: left;
     border: none;
     outline: none;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 1;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     top: 4px;
     border-top-right-radius: 25px;
@@ -107,6 +107,26 @@
 }
 .profile-right .information.active, .profile-right .group.active {
     background-color: #ffffff;
-    border-top: 2px solid #9E24FF;
+    border-top: 3px solid #9E24FF;
     color: #282828;
+}
+.card-bodytab{
+    width: 1000px;
+    height: 480px;
+    margin: 10px;
+    border-radius: 0px 10px 10px 10px;
+    background-color: #ffffff;
+    display: flex;
+}
+.list-group {
+    display: flex;
+}
+.list-group-item {
+    width: 900px;
+    height: 30px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    display: flex;
+}
+.row {
+    display: flex;
 }
