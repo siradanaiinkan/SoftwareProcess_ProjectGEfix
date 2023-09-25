@@ -43,7 +43,6 @@
 }
 .tab .search.active, .tab .detailed.active {
     background-color: #ffffff;
-    border-top: 2px solid #9E24FF;
     color: #282828;
 }
 
