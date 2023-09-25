@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body style="margin: 0;" onload="dashboard()">
+      <ul class="topbar">
+        <div class="left-items">
+          <li class="GEplus">
+            <img src="https://geplus.up.ac.th/images/icons/plus.svg">
+            <span>
+              <a1>GE Plus</a1>
+              <a2>University of Phayao</a2>
+            </span>
+          </li>
+          <li class="dashboard" onclick="dashboard()">
+            <i class="bi bi-house-door-fill"></i>
+            <a>หน้าเเรก</a>
+          </li>
+          <li class="assignment" onclick="assignment()">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <a>งานมอบหมาย</a>
+          </li>
+          <li class="personal" onclick="personal()">
+            <i class="bi bi-person-vcard-fill"></i>
+            <a>ข้อมูลส่วนตัว</a>
+          </li>
+          <li class="assessment" onclick="assessment()">
+            <i class="bi bi-clipboard2-check-fill"></i>
+            <a>ประเมินทักษะ ฯลฯ</a>
+          </li>
+        </div>
+        <div class="right-items">
+          <li class="person">
+            <i class="bi bi-person-circle" style="font-size: 170%;"></i>
+            <button class="dropdown-button" onclick="toggleMenu()">นาย คนดี สีแสงดำ</button>
+            <div class="dropdown-wrap" id="menu">
+              <ul class="dropdown-menu">
+                <li class="dropdown-home" onclick="dashboard()">
+                  <i class="bi bi-house-door-fill"></i>
+                  <a>หน้าเเรก</a>
+                </li>
+                <li class="dropdown-license">
+                  <i class="bi bi-people-fill"></i>
+                  <a>กลุ่มสิทธิ์การใช้งาน</a>
+                </li>
+                <li class="dropdown-logout">
+                  <i class="bi bi-power"></i>
+                  <a>ออกจากระบบ</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </div>
+      </ul>
+
+      <div id="content">
+        <!-- .html -->
+      </div>
+
+      <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
