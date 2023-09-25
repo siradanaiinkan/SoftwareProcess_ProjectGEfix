@@ -108,7 +108,6 @@
 }
 .profile-right .information.active, .profile-right .group.active {
     background-color: #ffffff;
-    border-top: 3px solid #9E24FF;
     color: #282828;
 }
 .card-bodytab{
