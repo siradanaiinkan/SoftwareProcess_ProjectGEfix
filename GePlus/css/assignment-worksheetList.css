@@ -54,7 +54,7 @@
   color: #000000;
   font-size: 80%;
 }
-.buttonAccept {
+#buttonAccept {
   background-color: #50ff84;
   border-color: #00000000;
   color: #000000;
@@ -62,7 +62,7 @@
   border-radius: 5px;
   margin-left: 85%;
 }
-.buttonNOAccept {
+#buttonNOAccept {
   background-color: #ff5454;
   border-color: #00000000;
   color: #000000;
