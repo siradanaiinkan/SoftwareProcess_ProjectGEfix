@@ -129,6 +129,9 @@
     border-radius: 15px;
 }
 .assignment-course .tab-top { 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
     height: 40px;
     border-bottom: 1px solid #EBEBEB;
     background-color: #E6C6FF;
@@ -143,6 +146,20 @@
     display: flex;
     align-items: center;
     height: 100%;
+}
+.assignment-course .course-botton {
+    transition: transform 0.5s ease;
+}
+.course-botton .bi {
+    margin: 10px;
+}
+.assignment-course .assignment-course-wrap {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.assignment-course-wrap.open{
+    max-height: 400px;
 }
 .assignment-course .table {
     width: 100%;
