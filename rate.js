@@ -1,6 +1,0 @@
-
-
-function rate(){
-    const popup = document.getElementById('popup')
-    popup.innerHTML = "<div class='bg-light shadow-lg p-3 mb-5 bg-body-tertiary rounded' style='width:800px; height: 500px; border-radius:20px;'><img src='https://th.bing.com/th/id/R.3605c7de156d083527f65b6d37b1f7ab?rik=g8DVrqzEM4J5pQ&riu=http%3a%2f%2ftomo-ni-subs.org%2fwp-content%2fuploads%2f2016%2f01%2fone-piece.jpg&ehk=3PECtEkPmXn0w141chOKHBjL%2ftHnaJ4O5YJNTBwFKS0%3d&risl=&pid=ImgRaw&r=0' class='rounded-0 position-absolute top-0 start-0 ms-3 mt-3' alt='...' width='300px'; height='200px';><div class='position-absolute top-50 end-0 translate-middle-y ' style='text-align:center; width:200px; margin-right:150px; height:500px;' ><br><br><br>รายละเอียดแบบประเมิน<br><br><br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, ipsam excepturi? Quam quaerat ipsam quibusdam molestias, quo numquam, velit at illum quidem explicabo iste corrupti? Dolor, vitae vel! Sapiente, cupiditate.</div><div class='container position-absolute top-50 start-0 translate-middle-y' style='margin-left:110px;' >แบบประเมิน</div><a class='btn btn-primary' href='main.html' style='margin-top:300px; margin-left:108px'>ประเมิน</a><a class='btn btn-outline-danger  position-absolute top-0 end-0'  href='#' onclick='window.location.reload(true);'>&nbsp;&nbsp;X&nbsp;&nbsp;</a></div>";
-}
