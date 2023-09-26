@@ -3,15 +3,11 @@ let assignmentElement = document.querySelector('.assignment');
 let personalElement = document.querySelector('.personal');
 let assessmentElement = document.querySelector('.assessment');
 //เปลียนสีของ topbar box อื่นๆนอกจากที่เลือก
-function setColor(selectedElement,otherElement) {
-  // เปลี่ยนสี topbar boxอื่น
-  otherElement.forEach(element => {
-      element.style.color = "#ffffff";
-      element.style.borderColor = "#ebebeb00";
-  });
-  // เปลี่ยนสี topbar
-  selectedElement.style.color = "#FFE881";
-  selectedElement.style.borderColor = "#FFE881";
+function setColor(otherElement) {
+    otherElement.forEach(element => {
+        element.style.color = "#ffffff";
+        element.style.borderColor = "#ebebeb00";
+    });
 }
 function loading() {
   text = `
@@ -27,9 +23,14 @@ function loading() {
 // get html css js
 function getHtml(selectedElement, otherElements) {
   loading();
+  // เปลี่ยนสี topbar
+  selectedElement.style.color = "#FFE881";
+  selectedElement.style.borderColor = "#FFE881";
+  // เปลี่ยนสี topbar boxอื่น
+  setColor(otherElements);
   // get name 
   const pageName = selectedElement.classList[0];
-  fetch(`${pageName}.html`)
+  fetch($,{pageName}.html)
       .then(res => {
         if (res.status != 200) { throw new Error("Bad Server Response"); }
         return res.text();
@@ -54,51 +55,30 @@ function getHtml(selectedElement, otherElements) {
             newStylesheet.href = stylesheet.getAttribute('href');
             head.appendChild(newStylesheet);
         });
-        console.log(document.querySelector('html')); 
       })
       .catch(function(err) {  
         console.log('Failed to fetch page: ', err);  
       });
 }
 // topbar Menu
-function dashboard() { //book
-  const selectedElement = document.querySelector('.dashboard');
-  const otherElement = [assignmentElement, personalElement, assessmentElement];
-  setColor(selectedElement,otherElement)
-  getHtml(dashboardElement, otherElement);
+function dashboard() {
+  const otherElements = [assignmentElement, personalElement, assessmentElement];
+  getHtml(dashboardElement, otherElements);
 }
 
-function assignment() { //aoom
-  const selectedElement = document.querySelector('.assignment');
-  const otherElement = [dashboardElement, personalElement, assessmentElement];
-  setColor(selectedElement,otherElement)
-  getHtml(assignmentElement, otherElement);
-}
-function assignmentWorksheetList() { //worksheet_List mark
-  const selectedElement = document.querySelector('.assignment');
-  const otherElement = [dashboardElement, personalElement, assessmentElement];
-  setColor(selectedElement,otherElement)
-  getHtml(document.querySelector('.assignment-worksheetList'), otherElement);
-}
-function assignmentWorksheetTurn() { //worksheet_Turn arm
-  const selectedElement = document.querySelector('.assignment');
-  const otherElement = [dashboardElement, personalElement, assessmentElement];
-  setColor(selectedElement,otherElement)
-  getHtml(document.querySelector('.assignment-worksheetTurn'), otherElement);
+function assignment() {
+  const otherElements = [dashboardElement, personalElement, assessmentElement];
+  getHtml(assignmentElement, otherElements);
 }
 
-function personal() { //wave
-  const selectedElement = document.querySelector('.personal');
-  const otherElement = [dashboardElement, assignmentElement, assessmentElement];
-  setColor(selectedElement,otherElement)
-  getHtml(personalElement, otherElement);
+function personal() {
+  const otherElements = [dashboardElement, assignmentElement, assessmentElement];
+  getHtml(personalElement, otherElements);
 }
 
-function assessment() { //
-  const selectedElement = document.querySelector('.assessment');
-  const otherElement = [dashboardElement, assignmentElement, personalElement];
-  setColor(selectedElement,otherElement)
-  getHtml(assessmentElement, otherElement);
+function assessment() {
+  const otherElements = [dashboardElement, assignmentElement, personalElement];
+  getHtml(assessmentElement, otherElements);
 }
 // Drop-down Profile Menu
  function toggleMenu() {
