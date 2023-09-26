@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/assignment.css">
+</head>
+<body>
+    <div class="assignment-tapbar">
+        <div class="assignment-search">
+              <div class="tab">
+                <div class="search-icon">
+                  <i class="bi bi-filter"></i>
+                  <a>ค้นหาข้อมูล</a>
+                </div>
+                <a style="margin-left: 20px;">
+                  <a class="search" onclick="assignmentSearch()">ค้นหา</a>
+                  <a class="detailed" onclick="assignmentDetailed()">แบบละเอียด</a>
+                </a>
+              </div>
+              <div id="search" class="tabcontent">
+                <a>ค้นหา</a>
+                <input type="text">
+                <button class="button-search"><i class="bi-search"></i>ค้นหา</button>
+                <button class="button-reset">Reset</button>
+              </div>
+              <div id="detailed" class="tabcontent" style="display: none;">
+                <div class="detailed-input-row">
+                  <div class="detailed-input">
+                    <a>ปีการศึกษา</a>
+                    <input type="text">
+                  </div>
+                  <div class="detailed-input">
+                    <a>ภาคการศึกษา</a>
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="detailed-input-row">
+                  <div class="detailed-input">
+                    <a>รหัสรายวิชา</a>
+                    <input type="text">
+                  </div>
+                  <div class="detailed-input">
+                    <a>ชื่อวิชา (Th)</a>
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="detailed-input-row">
+                  <div class="detailed-input">
+                    <a>ชื่อวิชา (Th)</a>
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="detailed-bottom" >
+                  <button class="button-search"><i class="bi-search"></i>ค้นหา</button>
+                  <button class="button-reset">Reset</button>
+                </div>
+              </div>
+            </div>
+        <div class="assignment-course">
+          <div class="tab-top">
+            <div class="course-icon">
+              <i class="bi bi-grid-fill"></i>
+              <a>รายวิชา</a>
+            </div>
+            <div class="course-botton" onclick="coursebotton()">
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+          <div class="assignment-course-wrap">
+            <div class="assignment-course-detail">
+              <div class="table">
+                <table>
+                  <tr>
+                    <th></th>
+                    <th>ปีการศึกษา</th>
+                    <th>รหัสรายวิชา</th>
+                    <th>ชื่อวิชา (TH)</th>
+                    <th>ชื่อวิชา (EN)</th>
+                    <th>รายการใบงาน</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://ge.up.ac.th/pluginfile.php/203554/course/overviewfiles/%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2%20003203.png" alt="">
+                    </td>
+                    <td>2566</td>
+                    <td>003203</td>
+                    <td>เรียนรู้ร่วมกันสรรค์สร้างสังคม</td>
+                    <td>Collaborative Learning for Society Creation</td>
+                    <td class="enter">
+                      <button class="assignment-worksheetList" onclick="assignmentWorksheetList()"><i class="bi bi-file-earmark-ruled-fill"></i>ไปยังหน้ารายการใบงาน</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="tab-bot">
+                <div class="left-items">
+                  <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <div class="mid-items">
+                  <i class="bi bi-skip-start-fill"></i>
+                  <i class="bi bi-rewind-fill"></i>
+                  <a style="border-left: 1px solid #E0DFDF;">หน้า</a>
+                  <a class="page">1</a>
+                  <a style="border-right: 1px solid #E0DFDF;">จาก 1</a>
+                  <i class="bi bi-fast-forward-fill"></i>
+                  <i class="bi bi-skip-end-fill"></i>
+                  <div class="select-page">
+                    <a>1</a>
+                    <i class="bi bi-chevron-down"></i>
+                  </div>
+                </div>
+                <div class="right-items">
+                  <a>เเสดง 1-1 จาก 1</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/assignment.js" ></script>
+</body>
+</html>
