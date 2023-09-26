@@ -1,0 +1,48 @@
+.bi {
+    font-size: 170%;
+    margin: 5px;
+}
+.assignment-search{
+    border: 1px solid #EBEBEB;
+    margin:10px;
+    border-radius: 15px;
+}
+.tab {
+    display: flex; 
+    overflow: hidden;
+    height: 40px;
+    border-bottom: 1px solid #EBEBEB;
+    background-color: #E6C6FF;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #9E24FF;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 0px 11px 0px 11px;
+}
+.tab .button {
+    background-color: #E6C6FF;
+    float: left;
+    border: none;
+    outline: none;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 1;
+    color: #ffffff;
+    cursor: pointer;
+    top: 4px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding: 8px 16px 8px 16px;
+    transition: 0.3s;
+    font-size: 95%;
+}
+.tab .button:hover {
+    background-color: #ff0000;
+}
+.tabcontent {
+    display: none;
+    border-top: none;
+    padding:0px 12px 6px 12px;
+    margin:0px 10px 10px 10px;
+}
